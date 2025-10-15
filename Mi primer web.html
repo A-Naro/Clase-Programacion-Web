@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Coiny&display=swap" rel="stylesheet">
         <title>Mi primer Web</title>
-    
+        <link rel="stylesheet" href="styles.css"/> 
+        
+        
     </head>
-    <body style="background-color: rgb(226, 248, 255); margin: 100px;">
+
+    <body style="background-color: rgb(226, 248, 255); margin: 100px;" >
         <div id="una capa">
+
+            <header>= ABOUT ME =</header>
             <h1 style="font-family:Verdana; color:cornflowerblue; ; text-align:center";>Edna Abigail Navarro Fuentes</h1>
             <p style="font-family:Arial; text-align:justify">Hola, soy Abi, I'm 20, y naci el 19 de septiembre del 2005. Disfruto de la musica electronica. Escucho diferentes artistas y cada semana cambio de cancion favorita. Igual me gustan muchos los videojuegos, especialmente los competitivos. Suelo juegar en la noche que hay buen internet y no hay ruido. Suelo leer algunos libros, especialmente los de Ransom Riggs.<br></p>
             <p style="font-family:Arial; text-align:justify">Para ser sincera, la carrera que originalmente queria estudiar era Ingenieria en Mecatronica en la UTM, pero mi papa no me dejo. Entre a esta carrera porque era mi segundo opcion, pero tambien me atrae la programacion.<br></p>
             <p style="font-family:Arial; text-align:justify">Lo que espero de esta carrera es poder aprender todo lo que se necesita para el desarrollo de software e inteligencia artifical, ya que son dos areas que se me hacen entretenidas y al mismo tiempo puedo ganar dinerito.</p>
+
+            <h1>= FORMULARIO =</h1>
+
+            <form action="procesar.php" method="post">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text"><br><br>
+
+                <label for="correo">E-mail:</label><br>
+                <input type="email"><br><br>
+
+                <label for="comentario">Comentario:</label><br>
+                <input type="comentario" class="comentario"><br><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+       
+            <style> 
+
+            header { 
+                font-family: "Bungee", sans-serif;
+                font-weight: 400; 
+                font-size: 60px; 
+                font-style: normal; 
+                color:cornflowerblue; 
+                text-align: center; 
+                top: 0; 
+                z-index: 2;
+            }
+
+            label {
+                font-family: "Coiny", system-ui;
+                font-weight: 400;
+                font-style: normal;
+            }
+            
+            input {
+                border: 0px;
+                border-radius: 7px;
+                background-color:lightblue;
+            }
+
+            .comentario{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                height: 50px;
+                width:auto;
+            }
+
+            </style>
         </div>
     </body>
 <html> 
