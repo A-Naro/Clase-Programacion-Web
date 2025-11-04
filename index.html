@@ -6,7 +6,7 @@
   <title>Página de Abi 🌙</title>
   <style>
     body {
-      background: rgb(46, 62, 126);
+      background: rgb(36, 58, 150);
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       background: var(--bg);
       margin: 0;
@@ -15,29 +15,14 @@
 
     /* ---- BANNER ----- */
     .banner-text {
-        position: relative;
-        max-width: 800px;
-        top: -410px;
-        margin: 50px auto;
-        background: linear-gradient(135deg, #2E3A7C, #6B4C8A);
-        padding: 35px;
-        border-radius: 14px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-        z-index: 2;
-        color: #E6E6E6;
-    }
-
-    section {
       position: relative;
-      max-width: 800px;
-      top: -410px;
-      margin: 50px auto;
-      background: linear-gradient(135deg, #2E3A7C, #6B4C8A);
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-      z-index: 2;
-      color: #E6E6E6;
+      margin-left: 5px;
+      z-index: 1;
+      font-size: 8px;
+      font-weight: 600;
+      color: rgb(0, 0, 0);
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     #hero {
@@ -55,16 +40,66 @@
     }
 
     /* ---- CONTENIDO ---- */
+/* ---- CONTENIDO ---- */
+section {
+  position: relative;
+  max-width: 800px;
+  top: -410px;
+  margin: 50px auto;
+  background: linear-gradient(135deg, #F6B26B, #F9D29D); /* tono cálido base */
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(246, 178, 107, 0.4);
+  z-index: 2;
+  color: #885400;
+}
 
-    /* --- BOTONES --- */
+/* 📚 Libros - tono rosado suave */
+.books_container {
+  background: linear-gradient(135deg, #F9A8D4, #FDCEDF);
+  box-shadow: 0 4px 16px rgba(255, 183, 197, 0.45);
+  color: #940059;
+  max-width: 1300px;
+  text-align: center;
+}
 
+  .books {
+    width: 100px;
+    height: 250px;
+    margin: 5px;
+  }
+
+/* 🎶 Música - naranja y coral */
+.music_container {
+  background: linear-gradient(135deg, #FDB99B, #FF9A8B);
+  box-shadow: 0 4px 16px rgba(255, 155, 120, 0.45);
+  color: #fff7f3;
+  max-width: 1300px;
+  justify-items: center;
+  height: 350px;
+}
+
+.video-card{
+  margin-top: 70px;
+}
+
+
+/* 💌 Contacto - morado atardecer */
+.message {
+  background: linear-gradient(135deg, #C084FC, #F9A8D4);
+  box-shadow: 0 4px 16px rgba(205, 140, 255, 0.4);
+  color: #fff8ff;
+}
+
+
+    /* BOTONES */
     :root {
       --x: 0;
       --y: 0;
       --xp: 0;
       --yp: 0;
       --hue: calc(0 + (var(--xp) * 500));
-      --bg: hsl(233, 31%, 17%);
+      --bg: hsl(223, 42%, 18%); 
       --size: 100px;
       --glow: radial-gradient(
         50% 50% at center,
@@ -78,11 +113,19 @@
 
     .button-container {
         display: flex;
+        flex-wrap: wrap; /* permite que los botones salten de línea */
+        justify-content: center; 
         justify-content: center;
         gap: 20px;
         position: relative;
-        top: -430px; /* súbelos o bájalos ajustando este valor */
+        top: -420px; /* súbelos o bájalos ajustando este valor */
         z-index: 3;
+        transition: all 0.5s ease;
+    }
+
+    .button-container button {
+      flex: 0 0 200px; /* no cambia de tamaño */
+      transition: transform 0.4s ease, opacity 0.4s ease;
     }
 
     button {
@@ -97,7 +140,7 @@
         cursor: pointer;
         background: linear-gradient(var(--bg), var(--bg)) padding-box,
                     var(--glow),
-                    linear-gradient(black, black) border-box;
+                    linear-gradient(rgb(65, 80, 118), rgb(55, 79, 101)) border-box;
         transition: background-size 0.24s;
         touch-action: none;
         position: relative;
@@ -114,7 +157,7 @@
     }
 
     button span {
-        background: var(--glow), black;
+        background: var(--glow), rgb(176, 62, 230);
         background-clip: text;
         color: transparent;
         height: 100%;
@@ -138,19 +181,171 @@
         border-radius: 1rem;
     }
 
-    
+    /* FORMULARIO */
+    .message {
+      text-align: center;
+      position: relative;
+      max-width: 800px;
+      top: -410px;
+      margin: 50px auto;
+      background: linear-gradient(135deg, #2d4eb1, #5f7dd7);
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(97, 123, 207, 0.682);
+      z-index: 2;
+      color: #E6E6E6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .form {
+      --bg-light: #efefef;
+      --bg-dark: #707070;
+      --clr: #b8e7ff;
+      --clr-alpha: #9c9c9c60;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 300px;
+      margin:10px auto;
+    }
+
+    .form .input-span {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form input[type="email"],
+    .form input[type="Nombre"],
+    .form input[type="comment"] {
+      border-radius: 0.5rem;
+      padding: 1rem 0.75rem;
+      width: 100%;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--clr-alpha);
+      outline: 2px solid var(--bg-dark);
+    }
+
+    .form input[type="email"]:focus,
+    .form input[type="Nombre"]:focus,
+    .form input[type="comment"]:focus {
+      outline: 2px solid var(--clr);
+    }
+
+    .label {
+      align-self: flex-start;
+      color: var(--clr);
+      font-weight: 600;
+    }
+
+    .form .submit {
+      padding: 1rem;
+      width: 109%;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 3rem;
+      background-color: var(--bg-dark);
+      color: var(--bg-light);
+      border: none;
+      cursor: pointer;
+      transition: all 300ms;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 10px auto;
+    }
+
+    .form .submit:hover {
+      background-color: var(--clr);
+      color: var(--bg-dark);
+    }
+
+    .span {
+      text-decoration: none;
+      color: var(--bg-dark);
+    }
+
+    .span a {
+      color: var(--clr);
+    }
+
+    @media (max-width: 900px) {
+      .button-container {
+        max-width: 650px;
+        margin: 0 auto;
+      }
+    }
+
+    /* Cuando sea menor a 700px → 2 columnas centradas */
+    @media (max-width: 700px) {
+      .button-container {
+        max-width: 450px;
+      }
+    }
+
+    /* Cuando sea menor a 500px → 1 columna centrada */
+    @media (max-width: 500px) {
+      .button-container {
+        flex-direction: column;
+        max-width: 200px;
+      }
+    }
+
+    @media (max-width: 900px),
+      (max-width: 700px),
+      (max-width: 500px) {
+        .button-container button {
+          transform: scale(1);
+          opacity: 1;
+        }
+    }
+
+ /* ---- Carrusel ---- */
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      max-width: 1250px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255, 180, 230, 0.6);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      width: 100%;
+      border-radius: 12px;
+    }
 
   </style>
 </head>
 
 <body>
   <main id="hero">
+    <div class="banner-text">
+      <h1></h1>
+    </div>
     <video muted autoplay loop>
       <source src="night cat.mp4" type="video/mp4">
     </video>
   </main>
 
-  <section class="">
+  <section>
     <h2>Sobre mí</h2>
     <p>Hola, soy Abi, y soy estudiante de Ingeniería en Computación. Esta es mi primera página web, y aquí les compartiré mis canciones favoritas, videojuegos, libros y otras cositas más. 🌙</p>
   </section>
@@ -158,40 +353,79 @@
   <div class="button-container">
     <a href="#libros"><button><span>Libros</span></button></a>
     <a href="#musica"><button><span>Música</span></button></a>
-    <a href="#juegos"><button><span>Juegos</span></button></a>
-    <a href="#peliculas"><button><span>Peliculas</span></button></a>
-    <a href="#comida"><button><span>Comida</span></button></a>
     <a href="#contacto"><button><span>Contacto</span></button></a>
   </div>
 
-    <section id="libros" class="Libros">
-        <h2>📚 Libros</h2>
-        <p>Aquí compartiré mis libros favoritos, citas que me inspiran y mis lecturas del momento.</p>
+    <section id="libros", class="books_container">
+        <div class="container">
+          <h2 class="text-center section-subheadin">📚 Libros</h2>          
+        </div>
+        <p>Aquí compartiré mis libros favoritos, citas que me inspiran y mis lecturas del momento.</p>        
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="https://m.media-amazon.com/images/I/91WjUEDBocL._UF1000,1000_QL80_.jpg" alt="Libro 1", class="books">
+            <img src="https://www.planetadelibros.com.mx/usuaris/libros/fotos/220/original/portada_la-ciudad-desolada-el-hogar-de-miss-peregrine-2_ransom-riggs_201607291726.jpg" alt="Libro 2", class="books">
+            <img src="https://m.media-amazon.com/images/I/81YNSWFke0L._AC_UF894,1000_QL80_.jpg" alt="Libro 3", class="books">
+            <img src="https://cdn.kobo.com/book-images/dd678516-eacb-4df4-be42-bccd56d50331/1200/1200/False/agua-roja.jpg" alt="Libro 4", class="books">
+            <img src="https://m.media-amazon.com/images/I/81jm8DRUfaL._UF1000,1000_QL80_.jpg" alt="Libro 4", class="books">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_740684-MLU70847877153_082023-O.webp" alt="Libro 4", class="books">
+            <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1545800414i/43359568.jpg" alt="Libro 4", class="books">
+          </div>
+        </div>
+
+
     </section>
 
-    <section id="musica">
+    <section id="musica" class="music_container">
         <h2>🎶 Música</h2>
         <p>Mis playlists favoritas, artistas que amo y canciones que me acompañan siempre.</p>
+        <div class="video-card">
+          <iframe 
+            src="https://www.youtube.com/embed/VNLrCWCv38Y"
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+          <iframe 
+            src="https://www.youtube.com/embed/Tp7AWHKoN18?list=RDTp7AWHKoN18&start_radio=1"
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+          <iframe 
+            src="https://www.youtube.com/embed/LlN8MPS7KQs?list=RDLlN8MPS7KQs&start_radio=1"
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
     </section>
 
-    <section id="juegos">
-        <h2>🎮 Juegos</h2>
-        <p>Videojuegos que me encantan, personajes favoritos y curiosidades gamer.</p>
-    </section>
+    <section id="contacto" class="message">
+        <h2>Contacto</h2>
+        <p>¿Quieres hablar conmigo? Aquí dejaré un formulario para contactarme.</p>
 
-    <section id="peliculas">
-        <h2>🎮 Peliculas</h2>
-        <p>Peliculas que me encantan y personajes favoritos</p>
-    </section>
+        <form class="form">
+          <span class="input-span">
+            <label for="email" class="label">Email</label>
+            <input type="email" name="email" id="email"/>
+          </span>
+          <span class="input-span">
+            <label for="Nombre" class="label">Nombre</label>
+            <input type="Nombre" name="Nombre" id="Nombre"/>
+          </span>
+          <span class="input-span">
+            <label for="comment" class="label">Comentario</label>
+            <input type="comment" name="comment" id="comment">
+          </span>
+           <input class="submit" type="submit" value="Enviar" />
+        </form>
 
-    <section id="comida">
-        <h2>🎮 Comida</h2>
-        <p>Mi comida favorita</p>
-    </section>
-
-    <section id="contacto">
-        <h2>📬 Contacto</h2>
-        <p>¿Quieres hablar conmigo? Aquí dejaré mis redes o un formulario para contactarme.</p>
     </section>
 
 
@@ -249,7 +483,20 @@
     });
   });
 
+    const track = document.querySelector('.carousel-track');
+    const images = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
   </script>
 </body>
 </html>
+
+
+
 
