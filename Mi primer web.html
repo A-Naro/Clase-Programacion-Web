@@ -11,6 +11,26 @@
       background: var(--bg);
       margin: 0;
       padding: 0;
+       width: 100%;
+      height: 100%;
+      --s: 200px; /* control the size */
+      --c1: #0c053c;
+      --c2: #422356;
+      --c3: #180461;
+
+      background: repeating-conic-gradient(
+            from 30deg,
+            #0000 0 120deg,
+            var(--c3) 0 180deg
+          )
+          calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+        repeating-conic-gradient(
+          from 30deg,
+          var(--c1) 0 60deg,
+          var(--c2) 0 120deg,
+          var(--c3) 0 180deg
+        );
+      background-size: var(--s) calc(var(--s) * 0.577);
     }
 
     /* ---- BANNER ----- */
@@ -320,11 +340,17 @@ section {
       overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 0 25px rgba(255, 180, 230, 0.6);
+      overflow-x: scroll; /* permite desplazamiento horizontal */
+      scrollbar-width: none; 
     }
 
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none; 
     }
 
     .carousel img {
@@ -367,9 +393,13 @@ section {
             <img src="https://www.planetadelibros.com.mx/usuaris/libros/fotos/220/original/portada_la-ciudad-desolada-el-hogar-de-miss-peregrine-2_ransom-riggs_201607291726.jpg" alt="Libro 2", class="books">
             <img src="https://m.media-amazon.com/images/I/81YNSWFke0L._AC_UF894,1000_QL80_.jpg" alt="Libro 3", class="books">
             <img src="https://cdn.kobo.com/book-images/dd678516-eacb-4df4-be42-bccd56d50331/1200/1200/False/agua-roja.jpg" alt="Libro 4", class="books">
-            <img src="https://m.media-amazon.com/images/I/81jm8DRUfaL._UF1000,1000_QL80_.jpg" alt="Libro 4", class="books">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_740684-MLU70847877153_082023-O.webp" alt="Libro 4", class="books">
-            <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1545800414i/43359568.jpg" alt="Libro 4", class="books">
+            <img src="https://m.media-amazon.com/images/I/81jm8DRUfaL._UF1000,1000_QL80_.jpg" alt="Libro 5", class="books">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_740684-MLU70847877153_082023-O.webp" alt="Libro 6", class="books">
+            <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1545800414i/43359568.jpg" alt="Libro 7", class="books">
+            <img src="https://m.media-amazon.com/images/I/813CRXx0EzL._UF1000,1000_QL80_.jpg" alt="Libro 8", class="books">
+            <img src="https://m.media-amazon.com/images/I/91NYQOPi8AL._UF1000,1000_QL80_.jpg" alt="Libro 9", class="books">
+            <img src="https://cdn.kobo.com/book-images/217d5e14-138d-4945-ac8e-6f501f83cf62/1200/1200/False/tres-segundos-2.jpg" alt="Libro 6", class="books">
+
           </div>
         </div>
 
@@ -397,7 +427,15 @@ section {
           </iframe>
 
           <iframe 
-            src="https://www.youtube.com/embed/HWkbewC2rhM?list=RDHWkbewC2rhM&start_radio=1"
+            src="https://www.youtube.com/embed/LlN8MPS7KQs?list=RDLlN8MPS7KQs&start_radio=1"
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+          <iframe 
+            src="https://www.youtube.com/embed/jKIEUdAMtrQ?list=RDjKIEUdAMtrQ&start_radio=1&pp=ygUKbWluZWZpZWxkc6AHAQ%3D%3D"
             title="YouTube video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -483,15 +521,37 @@ section {
     });
   });
 
-    const track = document.querySelector('.carousel-track');
-    const images = Array.from(track.children);
-    const nextButton = document.querySelector('.next');
-    const prevButton = document.querySelector('.prev');
-    let currentIndex = 0;
+let isDragging = false;
+let startX;
+let scrollLeft;
 
-    function updateCarousel() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
+const carousel = document.querySelector('.carousel');
+
+carousel.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  carousel.classList.add('active');
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+
+carousel.addEventListener('mouseleave', () => {
+  isDragging = false;
+  carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mouseup', () => {
+  isDragging = false;
+  carousel.classList.remove('active');
+});
+
+carousel.addEventListener('mousemove', (e) => {
+  if (!isDragging) return; // si no está arrastrando, no hace nada
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 2; // velocidad de arrastre
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
 
   </script>
 </body>
