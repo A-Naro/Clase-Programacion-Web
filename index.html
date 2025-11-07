@@ -6,17 +6,16 @@
   <title>Página de Abi 🌙</title>
   <style>
     body {
-      background: rgb(36, 58, 150);
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       background: var(--bg);
       margin: 0;
       padding: 0;
        width: 100%;
       height: 100%;
-      --s: 200px; /* control the size */
-      --c1: #0c053c;
-      --c2: #422356;
-      --c3: #180461;
+      --s: 1000px; /* control the size */
+      --c1: #252551;
+      --c2: #414373;
+      --c3: #2c3878;
 
       background: repeating-conic-gradient(
             from 30deg,
@@ -60,13 +59,12 @@
     }
 
     /* ---- CONTENIDO ---- */
-/* ---- CONTENIDO ---- */
 section {
   position: relative;
   max-width: 800px;
   top: -410px;
   margin: 50px auto;
-  background: linear-gradient(135deg, #F6B26B, #F9D29D); /* tono cálido base */
+  background: linear-gradient(135deg, #F6B26B, #F9D29D); 
   padding: 35px;
   border-radius: 14px;
   box-shadow: 0 4px 16px rgba(246, 178, 107, 0.4);
@@ -74,10 +72,9 @@ section {
   color: #885400;
 }
 
-/* 📚 Libros - tono rosado suave */
 .books_container {
   background: linear-gradient(135deg, #F9A8D4, #FDCEDF);
-  box-shadow: 0 4px 16px rgba(255, 183, 197, 0.45);
+  box-shadow: 0 4px 16px rgba(255, 183, 197, 0.919);
   color: #940059;
   max-width: 1300px;
   text-align: center;
@@ -89,10 +86,9 @@ section {
     margin: 5px;
   }
 
-/* 🎶 Música - naranja y coral */
 .music_container {
   background: linear-gradient(135deg, #FDB99B, #FF9A8B);
-  box-shadow: 0 4px 16px rgba(255, 155, 120, 0.45);
+  box-shadow: 0 4px 16px rgba(255, 184, 158, 0.916);
   color: #fff7f3;
   max-width: 1300px;
   justify-items: center;
@@ -103,8 +99,16 @@ section {
   margin-top: 70px;
 }
 
+.horario_container {
+  background: linear-gradient(135deg, #9ba8fd, #8bcdff);
+  box-shadow: 0 4px 16px rgba(88, 222, 255, 0.678);
+  color: #ffffff;
+  max-width: 1300px;
+  justify-items: center;
+  height: 600px;
+  text-align: center;
+}
 
-/* 💌 Contacto - morado atardecer */
 .message {
   background: linear-gradient(135deg, #C084FC, #F9A8D4);
   box-shadow: 0 4px 16px rgba(205, 140, 255, 0.4);
@@ -133,18 +137,18 @@ section {
 
     .button-container {
         display: flex;
-        flex-wrap: wrap; /* permite que los botones salten de línea */
+        flex-wrap: wrap; 
         justify-content: center; 
         justify-content: center;
         gap: 20px;
         position: relative;
-        top: -420px; /* súbelos o bájalos ajustando este valor */
+        top: -420px; 
         z-index: 3;
         transition: all 0.5s ease;
     }
 
     .button-container button {
-      flex: 0 0 200px; /* no cambia de tamaño */
+      flex: 0 0 200px; 
       transition: transform 0.4s ease, opacity 0.4s ease;
     }
 
@@ -208,10 +212,10 @@ section {
       max-width: 800px;
       top: -410px;
       margin: 50px auto;
-      background: linear-gradient(135deg, #2d4eb1, #5f7dd7);
+      background: linear-gradient(135deg, #9759e3, #8478ef);
       padding: 35px;
       border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(97, 123, 207, 0.682);
+      box-shadow: 0 4px 16px rgba(149, 120, 237, 0.844);
       z-index: 2;
       color: #E6E6E6;
       display: flex;
@@ -306,14 +310,12 @@ section {
       }
     }
 
-    /* Cuando sea menor a 700px → 2 columnas centradas */
     @media (max-width: 700px) {
       .button-container {
         max-width: 450px;
       }
     }
 
-    /* Cuando sea menor a 500px → 1 columna centrada */
     @media (max-width: 500px) {
       .button-container {
         flex-direction: column;
@@ -340,7 +342,7 @@ section {
       overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 0 25px rgba(255, 180, 230, 0.6);
-      overflow-x: scroll; /* permite desplazamiento horizontal */
+      overflow-x: scroll; 
       scrollbar-width: none; 
     }
 
@@ -358,6 +360,48 @@ section {
       border-radius: 12px;
     }
 
+
+
+    /* TABLA */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #6f1e8a, #3b82f6);
+    color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 1500px;
+    height: 500px;
+  }
+
+  thead {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  th, td {
+    padding: 15px 20px;
+  }
+
+  th {
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  tr:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.3s;
+  }
+
+  tbody {
+    text-align: center;
+  }
   </style>
 </head>
 
@@ -379,6 +423,7 @@ section {
   <div class="button-container">
     <a href="#libros"><button><span>Libros</span></button></a>
     <a href="#musica"><button><span>Música</span></button></a>
+    <a href="#horario"><button><span>Horario</span></button></a>
     <a href="#contacto"><button><span>Contacto</span></button></a>
   </div>
 
@@ -386,7 +431,7 @@ section {
         <div class="container">
           <h2 class="text-center section-subheadin">📚 Libros</h2>          
         </div>
-        <p>Aquí compartiré mis libros favoritos, citas que me inspiran y mis lecturas del momento.</p>        
+        <p>Aquí compartiré mis libros favoritos y mis lecturas del momento.</p>        
         <div class="carousel">
           <div class="carousel-track">
             <img src="https://m.media-amazon.com/images/I/91WjUEDBocL._UF1000,1000_QL80_.jpg" alt="Libro 1", class="books">
@@ -402,13 +447,11 @@ section {
 
           </div>
         </div>
-
-
     </section>
 
     <section id="musica" class="music_container">
         <h2>🎶 Música</h2>
-        <p>Mis playlists favoritas, artistas que amo y canciones que me acompañan siempre.</p>
+        <p>Estas son algunas de las canciones que suelo escuchar.</p>
         <div class="video-card">
           <iframe 
             src="https://www.youtube.com/embed/VNLrCWCv38Y"
@@ -443,6 +486,97 @@ section {
           </iframe>
         </div>
     </section>
+
+     <section id="horario", class="horario_container">
+        <div class="container">
+          <h2 class="text-center section-subheadin">Mi Horario</h2>          
+      <table>
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8:00 - 9:00</td>
+            <td>AyO computadoras</td>
+            <td>AyO computadoras</td>
+            <td>Metodos Numericos</td>
+            <td>Ingenieria de software</td>
+            <td>AyO computadoras</td>
+
+          </tr>
+          <tr>
+            <td>9:00 - 10:00</td>
+            <td>Compiladores</td>
+            <td>Metodos Numericos</td>
+            <td>Ingenieria de software</td>
+            <td>Compiladores</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>10:00 - 11:00</td>
+            <td>Compiladores</td>
+            <td>Metodos Numericos</td>
+            <td>-</td>
+            <td>Metodos Numericos</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>11:00 - 12:00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Metodos Numericos</td>
+            <td>Compiladores</td>
+          </tr>
+
+          <tr>
+            <td>12:00 - 1:00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Metodos Numericos</td>
+            <td>Compiladores</td>
+          </tr>
+
+          <tr>
+            <td>1:00 - 4:00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+
+          <tr>
+            <td>4:00 - 5:00</td>
+            <td>Ingenieria de Software</td>
+            <td>Programacion Web</td>
+            <td>-</td>
+            <td>Programacion Web</td>
+            <td>Programacion Web</td>
+          </tr>
+
+          <tr>
+            <td>5:00 - 6:00</td>
+            <td>Ingenieria de Software</td>
+            <td>Programacion Web</td>
+            <td>-</td>
+            <td>Programacion Web</td>
+            <td>Programacion Web</td>
+          </tr>
+        
+        </tbody>
+     </table>
+
+     </section>
 
     <section id="contacto" class="message">
         <h2>Contacto</h2>
@@ -556,9 +690,6 @@ carousel.addEventListener('mousemove', (e) => {
   </script>
 </body>
 </html>
-
-
-
 
 
 
